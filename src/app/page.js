@@ -1,6 +1,8 @@
 import NavBar from "@/components/common/NavBar";
 import Discover from "@/components/Discover";
 import Hero from "@/components/Hero";
+import SectionTwo from "@/components/SectionTwo";
+import ZoomImageSection from "@/components/ZoomImageSection";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,8 +10,9 @@ export default function Home() {
     <>
       <Hero />
       <NavBar />
-      <Discover/>
-      <Discover/>
+      <Discover />
+      <ZoomImageSection />
+      <SectionTwo />
     </>
   );
 }

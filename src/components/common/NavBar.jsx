@@ -16,25 +16,38 @@ const NavBar = () => {
                 start: "top top",
                 end: "bottom top",
                 scrub: 1,
-                markers: true,
+                markers: false,
                 animation: tl,
                 toggleActions: "play none none none",
                 duration: 2,
             })
             tl.from("#logoAnimate", {
                 y: -200,
-                scale:10
+                scale: 8
             })
+
+            // sticky nav
+            ScrollTrigger.create({
+                trigger: "#heroBg",
+                start: "bottom top",
+                endTrigger: "body",
+                end: "max",
+                pin: "#stickyNav",
+                pinSpacer: false,
+                pinSpacing:false,
+                markers: false,
+                anticipatePin: 1
+            });
         })
         return () => ctx.revert();
     }, [])
     return (
-        <div id='nav_parent' className='bg-[#2E2A27]'>
-            <div className='h-screen'>
+        <div id='nav_parent' className='bg-[#2E2A27] overflow-x-clip'>
+            <div id='heroBg' className='h-screen'>
                 <Image width={1200} height={1000} className='w-full h-full object-cover' src="/assets/images/webp/minimal-hero-bg.webp" alt='her-img' />
             </div>
-            <div className='sticky top-0 z-50'>
-                <div className='max-w-[1380px] mx-auto px-3'>
+            <div id='stickyNav' className='z-[500] bg-[#2E2A27]'>
+                <div className='max-w-[1380px] mx-auto px-3 container'>
                     <div className='flex items-center justify-between h-[85px] border-b border-solid border-white'>
                         <ul className='flex items-center gap-3 '>
                             {NAV_DATA_LIST.map((obj, i) => (
