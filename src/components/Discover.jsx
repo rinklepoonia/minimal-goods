@@ -18,21 +18,21 @@ const Discover = () => {
         toggleActions: "play none none none",
         duration: 2,
         pin: true,
-        pinSpacer: false,
         pinSpacing: false,
+        pinSpacer: false,
         animation: tl,
       })
       tl.to("#textOne", {
-        y: 200
+        y: 300
       })
       tl.to("#textTwo", {
-        y: 200
+        y: 450
       })
       tl.to("#textThree", {
-        y: 200
+        y: 350
       })
       tl.to("#textFour", {
-        y: 200
+        y: 250
       })
     })
     return () => ctx.revert();
@@ -52,6 +52,7 @@ const Discover = () => {
         <div id='textFour' className='bg-[#2E2A27] relative z-20'>
           <h2 className='text-[120px] leading-[128%] text-white'>design</h2>
         </div>
+        <div className='h-[300px] bg-[#2E2A27] z-20 relative'></div>
       </div>
     </div>
   )

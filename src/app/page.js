@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <NavBar />
       <Discover />
-      <ZoomImageSection />
+      {/* <ZoomImageSection /> */}
       {/* <ManyOptions/>  */}
       {/* <SectionTwo /> */}
     </>

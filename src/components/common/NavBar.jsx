@@ -46,7 +46,7 @@ const NavBar = () => {
             <div id='heroBg' className='h-screen'>
                 <Image width={1200} height={1000} className='w-full h-full object-cover' src="/assets/images/webp/minimal-hero-bg.webp" alt='her-img' />
             </div>
-            <div id='stickyNav' className='z-[500] bg-[#2E2A27]'>
+            <div id='stickyNav' className='z-[500] bg-[#2E2A27] sticky top-0'>
                 <div className='max-w-[1380px] mx-auto px-3 container'>
                     <div className='flex items-center justify-between h-[85px] border-b border-solid border-white'>
                         <ul className='flex items-center gap-3 '>
