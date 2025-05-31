@@ -31,9 +31,9 @@ const NavBar = () => {
                 trigger: "#heroBg",
                 start: "bottom top",
                 endTrigger: "body",
-                end: "max",
+                // end: "max",
                 pin: "#stickyNav",
-                pinSpacing: true,
+                pinSpacing: false,
                 markers: false,
                 anticipatePin: 1,
                 pinType: "fixed"
