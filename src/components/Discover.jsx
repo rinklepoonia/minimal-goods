@@ -12,9 +12,9 @@ const Discover = () => {
       ScrollTrigger.create({
         trigger: "#discoverParent",
         start: "top top",
-        end: "+2000 bottom",
+        end: "bottom top",
         scrub: 1,
-        markers: true,
+        markers: false,
         toggleActions: "play none none none",
         duration: 2,
         pin: true,
