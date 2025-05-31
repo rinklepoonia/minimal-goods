@@ -33,10 +33,10 @@ const NavBar = () => {
                 endTrigger: "body",
                 end: "max",
                 pin: "#stickyNav",
-                pinSpacer: false,
-                pinSpacing:false,
+                pinSpacing: true,
                 markers: false,
-                anticipatePin: 1
+                anticipatePin: 1,
+                pinType: "fixed"
             });
         })
         return () => ctx.revert();
