@@ -12,7 +12,7 @@ const Discover = () => {
       ScrollTrigger.create({
         trigger: "#discoverParent",
         start: "top top",
-        end: "bottom top",
+        end: "+1000",
         scrub: 1,
         markers: false,
         toggleActions: "play none none none",
@@ -21,6 +21,7 @@ const Discover = () => {
         pinSpacing: false,
         pinSpacer: false,
         animation: tl,
+        duration: 10,
       })
       tl.to("#textOne", {
         y: 300
@@ -38,7 +39,7 @@ const Discover = () => {
     return () => ctx.revert();
   }, [])
   return (
-    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-2 min-h-screen'>
+    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-2 min-h-screen pb-40'>
       <div className='container max-w-[1380px] mx-auto px-3 text-center'>
         <div>
           <h2 id='textOne' className='text-[120px] leading-[128%] text-white'>Discover</h2>
