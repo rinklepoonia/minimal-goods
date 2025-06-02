@@ -14,7 +14,7 @@ const ZoomImageSection = () => {
                 start: " top bottom",
                 end: "+1500 bottom",
                 scrub: 1,
-                markers: true,
+                markers: false,
                 toggleActions: "play none none none",
                 pin: true,
                 pinSpacing: false,
