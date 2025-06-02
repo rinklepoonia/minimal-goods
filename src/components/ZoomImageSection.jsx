@@ -28,9 +28,13 @@ const ZoomImageSection = () => {
             }, {
                 borderRadius: "0",
                 width: "1400px",
-                height: "933px"
+                height: "933px",
+
             }
             )
+                .to("#zoomImgEffect", {
+                    backgroundColor: "#E8E2DA",
+                })
         })
         return () => ctx.revert();
     }, [])

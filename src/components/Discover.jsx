@@ -15,13 +15,12 @@ const Discover = () => {
         end: "+1000",
         scrub: 1,
         markers: false,
-        toggleActions: "play none none none",
-        duration: 2,
         pin: true,
         pinSpacing: false,
         pinSpacer: false,
         animation: tl,
         duration: 10,
+        toggleActions: "play none none none",
       })
       tl.to("#textOne", {
         y: 300
