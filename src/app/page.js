@@ -8,13 +8,15 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
+
+    <div className="overflow-x-clip">
       <Hero />
       <NavBar />
       <Discover />
       <ZoomImageSection />
-      <ManyOptions/> 
+      <ManyOptions />
       {/* <SectionTwo /> */}
-    </>
+    </div>
+
   );
 }

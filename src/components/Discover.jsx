@@ -11,48 +11,51 @@ const Discover = () => {
       let tl = gsap.timeline()
       ScrollTrigger.create({
         trigger: "#discoverParent",
-        start: "-80 top",
+        start: "-15% top",
         end: "bottom top",
-        scrub: 3,
+        scrub: 1,
         markers: true,
         animation: tl,
-        duration: 10,
         toggleActions: "play none none none",
       })
       tl.to("#textOne", {
-        y: 300
+        y: 200
       })
-      tl.to("#textTwo", {
-        y: 350
-      })
-      tl.to("#textThree", {
-        y: 350
-      })
-      tl.to("#textFour", {
-        y: 50
-      })
-      tl.to("#blank", {
-        y: -223
-      })
+        .to("#textTwo", {
+          y: 200
+        })
+        .to("#textThree", {
+          y: 200
+        })
+        .to("#textFour", {
+          y: 200
+        })
     })
     return () => ctx.revert();
   }, [])
   return (
-    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-2 min-h-screen pb-40'>
-      <div className='container max-w-[1380px] mx-auto px-3 text-center'>
-        <div>
-          <h2 id='textOne' className='text-[173px] leading-[128%] text-white'>Discover</h2>
+    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-20 mb-[-1px]'>
+      <div className='container max-w-[1180px] mx-auto px-4 text-center'>
+        <div className='relative overflow-hidden'>
+          <div id='textOne' className=''>
+            <h2 className='text-[173px] leading-[80%] text-white'>Discover</h2>
+          </div>
         </div>
-        <div className='bg-[#2E2A27] relative z-10'>
-          <h2 id='textTwo' className='text-[173px] leading-[128%] text-white'>the best in</h2>
+        <div className='relative overflow-hidden'>
+          <div id='textTwo' className=''>
+            <h2 className='text-[173px] leading-[80%] text-white'>the best in</h2>
+          </div>
         </div>
-        <div className='bg-[#2E2A27] relative z-10'>
-          <h2 id='textThree' className='text-[173px] leading-[128%] text-white'>minimal</h2>
+        <div className='relative overflow-hidden'>
+          <div id='textThree' className=''>
+            <h2 className='text-[173px] leading-[80%] text-white'>minimal</h2>
+          </div>
         </div>
-        <div id='textFour' className='bg-[#2E2A27] relative z-20'>
-          <h2 className='text-[173px] leading-[128%] text-white'>design</h2>
+        <div className='relative overflow-hidden'>
+          <div id='textFour' className=''>
+            <h2 className='text-[173px] leading-[80%] text-white'>design</h2>
+          </div>
         </div>
-        <div id='blank' className='h-[300px]  z-20 relative bg-[#2E2A27]'></div>
       </div>
     </div>
   )

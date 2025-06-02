@@ -11,8 +11,8 @@ const ZoomImageSection = () => {
             let tl = gsap.timeline()
             ScrollTrigger.create({
                 trigger: "#zoomImgEffect",
-                start: " top bottom",
-                end: "+1500 bottom",
+                start: " top top",
+                end: "bottom top",
                 scrub: 1,
                 markers: false,
                 toggleActions: "play none none none",
@@ -27,8 +27,8 @@ const ZoomImageSection = () => {
                 height: "300px",
             }, {
                 borderRadius: "0",
-                width: "1400px",
-                height: "933px",
+                width: "100vw",
+                height: "953px",
 
             }
             )
@@ -39,11 +39,9 @@ const ZoomImageSection = () => {
         return () => ctx.revert();
     }, [])
     return (
-        <div id='zoomImgEffect' className='min-h-screen bg-[#2E2A27] z-40 flex justify-center items-center'>
-            <div className='px-3'>
-                <div id='imgZoom' className='mx-auto'>
-                    <Image width={1400} height={953} className='object-cover mx-auto' src="/assets/images/webp/room.webp" alt='her-img' />
-                </div>
+        <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[40] px-4 flex justify-center items-center'>
+            <div id='imgZoom' className='mx-auto '>
+                <Image width={1400} height={953} className='object-cover mx-auto' src="/assets/images/webp/room.webp" alt='her-img' />
             </div>
         </div>
     )
