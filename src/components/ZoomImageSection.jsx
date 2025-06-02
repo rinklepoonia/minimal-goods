@@ -39,7 +39,7 @@ const ZoomImageSection = () => {
         return () => ctx.revert();
     }, [])
     return (
-        <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[40] px-4 flex justify-center items-center'>
+        <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[40] px-4 flex justify-center items-center overflow-hidden'>
             <div id='imgZoom' className='mx-auto '>
                 <Image width={1400} height={953} className='object-cover mx-auto' src="/assets/images/webp/room.webp" alt='her-img' />
             </div>

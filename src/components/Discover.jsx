@@ -11,7 +11,7 @@ const Discover = () => {
       let tl = gsap.timeline()
       ScrollTrigger.create({
         trigger: "#discoverParent",
-        start: "-15% top",
+        start: "-25% top",
         end: "bottom top",
         scrub: 1,
         markers: true,
@@ -54,7 +54,7 @@ const Discover = () => {
         <div className='relative overflow-hidden'>
           <div id='textFour' className=''>
             <h2 className='text-[173px] leading-[80%] text-white'>design</h2>
-          </div>
+          </div>  
         </div>
       </div>
     </div>
