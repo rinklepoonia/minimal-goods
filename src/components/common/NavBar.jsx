@@ -48,7 +48,7 @@ const NavBar = () => {
                 <Image width={1200} height={1000} className='w-full h-full object-cover' src="/assets/images/webp/minimal-hero-bg.webp" alt='her-img' />
             </div>
             <div id='stickyNav' className='z-[500] bg-[#2E2A27]'>
-                <div className='max-w-[1380px] mx-auto px-3 container'>
+                <div className=' mx-auto px-10'>
                     <div id='borderBottom' className='flex items-center justify-between h-[85px] border-b border-solid border-[#fff]'>
                         <ul className='flex items-center gap-3 '>
                             {NAV_DATA_LIST.map((obj, i) => (

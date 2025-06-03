@@ -1,5 +1,6 @@
 import NavBar from "@/components/common/NavBar";
 import Discover from "@/components/Discover";
+import Furniture from "@/components/Furniture";
 import Hero from "@/components/Hero";
 import ManyOptions from "@/components/ManyOptions";
 import SectionTwo from "@/components/SectionTwo";
@@ -15,7 +16,7 @@ export default function Home() {
       <Discover />
       <ZoomImageSection />
       <ManyOptions />
-      {/* <SectionTwo /> */}
+      <Furniture />
     </div>
 
   );

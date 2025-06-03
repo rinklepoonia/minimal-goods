@@ -29,7 +29,7 @@ const Discover = () => {
         })
         .to("#textFour", {
           y: 200,
-        }, "-=0.4")
+        })
     })
     return () => ctx.revert();
   }, [])
