@@ -3,8 +3,8 @@ import React from 'react'
 
 const ManyOptions = () => {
   return (
-    <div className='bg-[#E8E2DA] z-[30] relative py-22 min-h-screen'>
-      {/* <div className='container px-4 max-w-[1180px] mx-auto'>
+    <div className='bg-[#E8E2DA] z-[40] relative py-22 min-h-screen'>
+      <div className='container px-4 max-w-[1180px] mx-auto'>
         <div className='flex items-center gap-2.5 flex-wrap justify-center'>
           {OPTIONS_DATA_LIST.map((obj, i) => (
             <div key={i}>
@@ -12,7 +12,7 @@ const ManyOptions = () => {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
