@@ -12,23 +12,26 @@ const Furniture = () => {
             ScrollTrigger.create({
                 trigger: "#furniture",
                 start: "top top",
-                end: "bottom top",
+                endTrigger: "#next",
+                end: "top top",
                 scrub: 1,
                 markers: true,
                 animation: tl,
                 toggleActions: "play none none none",
                 pin: true,
             })
-                tl.to("#scrollImg", {
-                    y: -600
-                })
+            // tl.to("#scrollImg", {
+            //     y: -600
+            // })
         })
         return () => ctx.revert();
     }, [])
     return (
         <div>
-            <div id='furniture' className='min-h-screen bg-[#E8E2DA] flex flex-col justify-end'>
-                <p className='text-[250px] font-bold text-black'>Furniture</p>
+            <div className='min-h-screen bg-[#E8E2DA] flex flex-col justify-end'>
+                <div id='furniture'>
+                    <p className='text-[250px] font-bold text-black'>Furniture</p>
+                </div>
 
                 <div id='scrollImg' className='flex flex-row justify-center relative z-2'>
                     <div className='w-[24%] mr-5'>
@@ -54,7 +57,7 @@ const Furniture = () => {
                 </div>
 
             </div>
-            <div className='min-h-screen'></div>
+            <div id='next' className='min-h-screen'></div>
         </div>
     )
 }
