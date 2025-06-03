@@ -38,7 +38,7 @@ const NavBar = () => {
                 anticipatePin: 1,
                 pinType: "fixed"
             });
-            
+
         })
         return () => ctx.revert();
     }, [])
@@ -49,7 +49,7 @@ const NavBar = () => {
             </div>
             <div id='stickyNav' className='z-[500] bg-[#2E2A27]'>
                 <div className='max-w-[1380px] mx-auto px-3 container'>
-                    <div className='flex items-center justify-between h-[85px] border-b border-solid border-white'>
+                    <div id='borderBottom' className='flex items-center justify-between h-[85px] border-b border-solid border-[#fff]'>
                         <ul className='flex items-center gap-3 '>
                             {NAV_DATA_LIST.map((obj, i) => (
                                 <li key={i}>

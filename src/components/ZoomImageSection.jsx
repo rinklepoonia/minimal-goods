@@ -11,30 +11,29 @@ const ZoomImageSection = () => {
             let tl = gsap.timeline()
             ScrollTrigger.create({
                 trigger: "#zoomImgEffect",
-                start: " top top",
+                start: "top top",
                 end: "bottom top",
                 scrub: 1,
                 markers: true,
                 toggleActions: "play none none none",
                 pin: true,
-                pinSpacing: false,
-                pinSpacer: false,
+                pinSpacing: true,
                 animation: tl,
             })
             tl.fromTo("#imgZoom img", {
                 borderRadius: "100rem",
-                width: "300px",
-                height: "300px",
+                width: "400px",
+                height: "400px",
             }, {
                 borderRadius: "0",
                 width: "100vw",
                 height: "953px",
 
-            }
+            },"<"
             )
                 .to("#zoomImgEffect", {
                     backgroundColor: "#E8E2DA",
-                })
+                }, "<")
                 .to("#stickyNav", {
                     backgroundColor: "#E8E2DA",
                 }, "<")
@@ -43,6 +42,9 @@ const ZoomImageSection = () => {
                 }, "<")
                 .to("#logoPath", {
                     fill: "#000",
+                }, "<")
+                .to("#borderBottom", {
+                    borderBottomColor: "#000",
                 }, "<")
         })
         return () => ctx.revert();

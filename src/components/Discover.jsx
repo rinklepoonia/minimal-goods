@@ -28,8 +28,8 @@ const Discover = () => {
           y: 200
         })
         .to("#textFour", {
-          y: 200
-        })
+          y: 200,
+        }, "-=0.4")
     })
     return () => ctx.revert();
   }, [])
@@ -54,7 +54,7 @@ const Discover = () => {
         <div className='relative overflow-hidden'>
           <div id='textFour' className=''>
             <h2 className='text-[173px] leading-[80%] text-white'>design</h2>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
