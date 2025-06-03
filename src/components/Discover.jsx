@@ -11,10 +11,10 @@ const Discover = () => {
       let tl = gsap.timeline()
       ScrollTrigger.create({
         trigger: "#discoverParent",
-        start: "-25% top",
-        end: "bottom top",
+        start: "top 25%",
+        end: "bottom 25%",
         scrub: 1,
-        markers: false,
+        markers: true,
         animation: tl,
         toggleActions: "play none none none",
       })

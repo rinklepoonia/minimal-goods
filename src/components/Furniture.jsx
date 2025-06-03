@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,31 +42,65 @@ const imageGroups = [
 ];
 
 const Furniture = () => {
+    const [color, setColor] = useState('#fff')
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            let tl = gsap.timeline();
+            // Pin the section
             ScrollTrigger.create({
                 trigger: "#furniture",
                 start: "top top",
                 endTrigger: "#next",
                 end: "top top",
-                scrub: 1,
-                markers: true,
-                animation: tl,
-                toggleActions: "play none none none",
                 pin: true,
-            }); gsap.to("#imgScroll", {
-                y: -100
-            })
+                markers: false, // Set to true for debugging
+                onUpdate: (self) => {
+                    if (self.progress > 0.2 && self.progress < 0.39999999) {
+                        setColor('#000')
+                    }
+                    else if (self.progress > 0.4 && self.progress < 0.59999999) {
+                        setColor('#f20505')
+                    }
+                    else if (self.progress > 0.6 && self.progress < 0.79999999) {
+                        setColor('#0519f2')
+                    }
+                    else if (self.progress > 0.8) {
+                        setColor('#010101')
+                    }
+                    else {
+                        setColor('#fff')
+                    }
+                },
+            });
+
+            // Parallax effect for images
+            const images = document.querySelectorAll('.parallax-img');
+
+            images.forEach((img, index) => {
+
+
+                gsap.to(img, {
+                    yPercent: -100, // Move up by 12px at most
+                    ease: "linear",
+                    scrollTrigger: {
+                        trigger: img,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 5, // Lower values = smoother, more responsive
+                        id: `${index + 1}th image`,
+                        invalidateOnRefresh: true, markers: true, // Set to true for debugging
+                    }
+                });
+            });
         });
+
         return () => ctx.revert();
     }, []);
 
     return (
         <div>
-            <div className="min-h-screen bg-[#E8E2DA] flex flex-col justify-end px-10">
-                <div id="furniture">
-                    <p className="xl:text-[250px] text-[100px] font-bold text-black px-10 text-start">
+            <div style={{ background: color }} className=" bg-[#E8E2DA] flex flex-col justify-end px-10 transition-all ease-linear duration-300">
+                <div id="furniture" className="h-screen w-screen flex justify-start items-end">
+                    <p className="xl:text-[250px] text-[100px] font-bold  text-black px-10 text-start">
                         Furniture
                     </p>
                 </div>
@@ -79,9 +113,9 @@ const Furniture = () => {
                     >
                         {group.map((item, i) => (
                             <div key={i} className={item.className}>
-                                <div className={item.imageHeight}>
-                                    <Image id="imgScroll"
-                                        className="absolute object-cover"
+                                <div className={`${item.imageHeight} `}>
+                                    <Image
+                                        className="parallax-img object-cover w-full h-full"
                                         width={item.width}
                                         height={item.height}
                                         src={item.src}
