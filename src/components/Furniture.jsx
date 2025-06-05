@@ -44,6 +44,7 @@ const imageGroups = [
 const Furniture = () => {
     const [bgColor, setBgColor] = useState('#fff');
     const [textColor, setTextColor] = useState('#000');
+    const [displayText, setDisplayText] = useState('');
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // Pin the section
@@ -53,31 +54,32 @@ const Furniture = () => {
                 endTrigger: "#next",
                 end: "top top",
                 pin: true,
+                pinSpacing: false,
+                pinSpacer: false,
                 markers: false, // Set to true for debugging
                 onUpdate: (self) => {
-                    let displayText = "";
                     if (self.progress > 0.2 && self.progress < 0.39999999) {
-                        displayText = "Furniture";
+                        setDisplayText("Furniture");
                         setBgColor('#2E2A27');
                         setTextColor('#fcfcfc');
                     }
                     else if (self.progress > 0.4 && self.progress < 0.59999999) {
-                        displayText = "Decor";
+                        setDisplayText("Decor");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                     }
                     else if (self.progress > 0.6 && self.progress < 0.79999999) {
-                        displayText = "Office";
+                        setDisplayText("Office");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                     }
                     else if (self.progress > 0.8) {
-                        displayText = "Tech";
+                        setDisplayText("Tech");
                         setBgColor('#010101');
                         setTextColor('#fff');
                     }
                     else {
-                        displayText = "xyz";
+                        setDisplayText("xyz");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                     }
@@ -96,7 +98,10 @@ const Furniture = () => {
                         end: "bottom top",
                         scrub: 5, // Lower values = smoother, more responsive
                         id: `${index + 1}th image`,
-                        invalidateOnRefresh: true, markers: true, // Set to true for debugging
+                        invalidateOnRefresh: true,
+                        markers: true, // Set to true for debugging
+                        pinSpacing: false,
+                        pinSpacer: false,
                     }
                 });
             });
