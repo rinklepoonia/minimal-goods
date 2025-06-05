@@ -42,7 +42,8 @@ const imageGroups = [
 ];
 
 const Furniture = () => {
-    const [color, setColor] = useState('#fff')
+    const [bgColor, setBgColor] = useState('#fff');
+    const [textColor, setTextColor] = useState('#000');
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // Pin the section
@@ -54,30 +55,38 @@ const Furniture = () => {
                 pin: true,
                 markers: false, // Set to true for debugging
                 onUpdate: (self) => {
+                    let displayText = "";
                     if (self.progress > 0.2 && self.progress < 0.39999999) {
-                        setColor('#000')
+                        displayText = "Furniture";
+                        setBgColor('#2E2A27');
+                        setTextColor('#fcfcfc');
                     }
                     else if (self.progress > 0.4 && self.progress < 0.59999999) {
-                        setColor('#f20505')
+                        displayText = "Decor";
+                        setBgColor('#E8E2DA');
+                        setTextColor('#000');
                     }
                     else if (self.progress > 0.6 && self.progress < 0.79999999) {
-                        setColor('#0519f2')
+                        displayText = "Office";
+                        setBgColor('#E8E2DA');
+                        setTextColor('#000');
                     }
                     else if (self.progress > 0.8) {
-                        setColor('#010101')
+                        displayText = "Tech";
+                        setBgColor('#010101');
+                        setTextColor('#fff');
                     }
                     else {
-                        setColor('#E8E2DA')
+                        displayText = "xyz";
+                        setBgColor('#E8E2DA');
+                        setTextColor('#000');
                     }
                 },
             });
-
             // Parallax effect for images
             const images = document.querySelectorAll('.parallax-img');
 
             images.forEach((img, index) => {
-
-
                 gsap.to(img, {
                     yPercent: -100, // Move up by 12px at most
                     ease: "linear",
@@ -98,13 +107,12 @@ const Furniture = () => {
 
     return (
         <div>
-            <div style={{ background: color }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
+            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
                 <div id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
-                    <p className="xl:text-[250px] text-[100px] font-bold  text-black  text-start">
-                        Furniture
+                    <p className="xl:text-[250px] text-[100px] font-bold  text-start">
+                        {displayText}
                     </p>
                 </div>
-
                 {imageGroups.map((group, index) => (
                     <div
                         key={index}

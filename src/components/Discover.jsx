@@ -11,7 +11,7 @@ const Discover = () => {
       let tl = gsap.timeline()
       ScrollTrigger.create({
         trigger: "#discoverParent",
-        start: "top 25%",
+        start: "top 10%",
         end: "bottom 25%",
         scrub: 1,
         markers: true,
