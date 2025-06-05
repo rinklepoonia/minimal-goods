@@ -67,7 +67,7 @@ const Furniture = () => {
                         setColor('#010101')
                     }
                     else {
-                        setColor('#fff')
+                        setColor('#E8E2DA')
                     }
                 },
             });
@@ -98,9 +98,9 @@ const Furniture = () => {
 
     return (
         <div>
-            <div style={{ background: color }} className=" bg-[#E8E2DA] flex flex-col justify-end px-10 transition-all ease-linear duration-300">
-                <div id="furniture" className="h-screen w-screen flex justify-start items-end">
-                    <p className="xl:text-[250px] text-[100px] font-bold  text-black px-10 text-start">
+            <div style={{ background: color }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
+                <div id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
+                    <p className="xl:text-[250px] text-[100px] font-bold  text-black  text-start">
                         Furniture
                     </p>
                 </div>
@@ -108,7 +108,7 @@ const Furniture = () => {
                 {imageGroups.map((group, index) => (
                     <div
                         key={index}
-                        className={`flex flex-row justify-start relative z-2 ${index === 2 || index === 5 ? "mt-[-13%]" : "mt-32"
+                        className={`flex flex-row justify-start relative z-2 px-10  ${index === 2 || index === 5 ? "mt-[-13%]" : "mt-32"
                             }`}
                     >
                         {group.map((item, i) => (
