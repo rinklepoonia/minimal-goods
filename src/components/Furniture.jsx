@@ -97,7 +97,7 @@ const Furniture = () => {
                         setTextColor('#fff');
                     }
                     // whiteTech
-                    else if (self.progress > 0.8999999 && self.progress < 1.1) {
+                    else if (self.progress >= 0.8999999) {
                         setDisplayText("Tech");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
@@ -120,7 +120,7 @@ const Furniture = () => {
                         trigger: img,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: 5, 
+                        scrub: 5,
                         id: `${index + 1}th image`,
                         invalidateOnRefresh: true,
                         markers: true,
@@ -135,7 +135,7 @@ const Furniture = () => {
     return (
         <div>
             <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
-                <div  id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
+                <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
                     <p className="xl:text-[250px] text-[100px] font-bold  text-start">
                         {displayText}
                     </p>
