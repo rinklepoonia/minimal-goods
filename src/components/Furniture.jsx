@@ -58,17 +58,32 @@ const Furniture = () => {
                 pinSpacer: false,
                 markers: false, // Set to true for debugging
                 onUpdate: (self) => {
-                    if (self.progress > 0.2 && self.progress < 0.39999999) {
+                    console.log("Current Progress:", self.progress);
+                    if (self.progress > 0.15 && self.progress < 0.16666666) {
                         setDisplayText("Furniture");
                         setBgColor('#2E2A27');
-                        setTextColor('#fcfcfc');
+                        setTextColor('#fff');
                     }
-                    else if (self.progress > 0.4 && self.progress < 0.59999999) {
+                    // ===blackdecor
+                    else if (self.progress > 0.17 && self.progress < 0.29999999) {
+                        setDisplayText("Decor");
+                        setBgColor('#2E2A27');
+                        setTextColor('#fff');
+                    }
+                    // ==whitedecor
+                    else if (self.progress > 0.3 && self.progress < 0.34444444) {
                         setDisplayText("Decor");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                     }
-                    else if (self.progress > 0.6 && self.progress < 0.79999999) {
+                    // ===blackOffice
+                    else if (self.progress > 0.35 && self.progress < 0.49999999) {
+                        setDisplayText("Office");
+                        setBgColor('#2E2A27');
+                        setTextColor('#fff');
+                    }
+                    // ===whiteOffice
+                    else if (self.progress > 0.5 && self.progress < 0.79999999) {
                         setDisplayText("Office");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
@@ -79,7 +94,7 @@ const Furniture = () => {
                         setTextColor('#fff');
                     }
                     else {
-                        setDisplayText("xyz");
+                        setDisplayText("Furniture");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                     }
