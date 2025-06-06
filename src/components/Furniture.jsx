@@ -8,10 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const imageGroups = [
     [
-        { src: "/assets/images/webp/white-window.webp", width: 334, height: 438, className: "w-[24%] mr-[6.25%] mt-0", imageHeight: "h-[438px]", alt: "white-window" },
-        { src: "/assets/images/webp/study-table.webp", width: 248, height: 325, className: "w-[19%] mr-[6.25%] mt-[20%]", imageHeight: "h-[325px]", alt: "study-table" },
-        { src: "/assets/images/webp/white-cahir.webp", width: 161, height: 212, className: "w-[12%] mt-[4%]", imageHeight: "h-[212px]", alt: "white-chair" },
-        { src: "/assets/images/webp/single-chair.webp", width: 420, height: 551, className: "w-[31%] mt-[24%]", imageHeight: "h-[551px]", alt: "single-chair" },
+        { src: "/assets/images/webp/white-window.webp", width: 334, height: 438, className: "w-[24%] mr-[6.25%] mt-0 h-[438px]", imageHeight: "h-[438px]", alt: "white-window" },
+        { src: "/assets/images/webp/study-table.webp", width: 248, height: 325, className: "w-[19%] mr-[6.25%] mt-[20%] h-[325px]", imageHeight: "h-[325px]", alt: "study-table" },
+        { src: "/assets/images/webp/white-cahir.webp", width: 161, height: 212, className: "w-[12%] mt-[4%] h-[212px]", imageHeight: "h-[212px]", alt: "white-chair" },
+        { src: "/assets/images/webp/single-chair.webp", width: 420, height: 551, className: "w-[31%] mt-[24%] max-h-[551px]", imageHeight: "max-h-[551px]", alt: "single-chair" },
     ],
     [
         { src: "/assets/images/webp/white-masrum.webp", width: 334, height: 438, className: "w-[24%] mr-[6.25%] mt-0", imageHeight: "h-[438px]", alt: "white-masrum" },
@@ -56,7 +56,7 @@ const Furniture = () => {
                 pin: true,
                 pinSpacing: false,
                 pinSpacer: false,
-                markers: false, // Set to true for debugging
+                markers: false,
                 onUpdate: (self) => {
                     console.log("Current Progress:", self.progress);
                     // ====blackFurniture
@@ -114,18 +114,16 @@ const Furniture = () => {
 
             images.forEach((img, index) => {
                 gsap.to(img, {
-                    yPercent: -100, // Move up by 12px at most
+                    yPercent: -100,
                     ease: "linear",
                     scrollTrigger: {
                         trigger: img,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: 5, // Lower values = smoother, more responsive
+                        scrub: 5, 
                         id: `${index + 1}th image`,
                         invalidateOnRefresh: true,
-                        markers: true, // Set to true for debugging
-                        pinSpacing: false,
-                        pinSpacer: false,
+                        markers: true,
                     }
                 });
             });
@@ -136,8 +134,8 @@ const Furniture = () => {
 
     return (
         <div>
-            <div className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
-                <div style={{ background: bgColor, color: textColor, }} id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
+            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
+                <div  id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
                     <p className="xl:text-[250px] text-[100px] font-bold  text-start">
                         {displayText}
                     </p>
@@ -145,8 +143,7 @@ const Furniture = () => {
                 {imageGroups.map((group, index) => (
                     <div
                         key={index}
-                        className={`flex flex-row justify-start relative z-2 px-10  ${index === 3 ? "mt-60" : index === 2 || index === 5 ? "mt-0" : "mt-32"
-                            }`}
+                        className={`flex flex-row justify-start relative z-2 px-10  `}
                     >
                         {group.map((item, i) => (
                             <div key={i} className={item.className}>
