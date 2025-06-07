@@ -34,7 +34,7 @@ const Discover = () => {
     return () => ctx.revert();
   }, [])
   return (
-    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-20 mb-[-1px]'>
+    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-20 mb-[-1px] relative z-[2]'>
       <div className='container max-w-[1180px] mx-auto px-4 text-center'>
         <div className='relative overflow-hidden'>
           <div id='textOne' className=''>
@@ -53,7 +53,7 @@ const Discover = () => {
         </div>
         <div className='relative overflow-hidden'>
           <div id='textFour' className=''>
-            <h2 className='text-[173px] leading-[80%] text-white'>design</h2>
+            <h2 className='text-[173px] leading-[100%] text-white'>design</h2>
           </div>
         </div>
       </div>

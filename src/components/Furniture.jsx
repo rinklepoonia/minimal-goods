@@ -1,4 +1,5 @@
 "use client";
+import { OPTIONS_DATA_LIST } from "@/utils/helper";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -51,8 +52,8 @@ const Furniture = () => {
             ScrollTrigger.create({
                 trigger: "#furniture",
                 start: "top top",
-                endTrigger: "#next",
-                end: "top top",
+                endTrigger: "#footer",
+                end: "top bottom",
                 pin: true,
                 pinSpacing: false,
                 pinSpacer: false,
@@ -109,9 +110,13 @@ const Furniture = () => {
                     }
                 },
             });
+            // gsap.fromTo("#manyOption", {
+            //     y: 0
+            // }, {
+            //     y: -600
+            // })
             // Parallax effect for images
             const images = document.querySelectorAll('.parallax-img');
-
             images.forEach((img, index) => {
                 gsap.to(img, {
                     yPercent: -100,
@@ -133,10 +138,17 @@ const Furniture = () => {
     }, []);
 
     return (
-        <div>
-            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300">
-                <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex justify-start items-end  px-10">
-                    <p className="xl:text-[250px] text-[100px] font-bold  text-start">
+        <>
+            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
+                <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex flex-col justify-start items-end  px-10">
+                    <div id="manyOption" className='flex items-center gap-2.5 flex-wrap justify-center mt-80 max-w-[1200px] mx-auto'>
+                        {OPTIONS_DATA_LIST.map((obj, i) => (
+                            <div key={i}>
+                                <p className='text-[#2e2a27] text-6xl leading-[70%] font-normal border border-solid border-[#2E2A27]/35 rounded-full w-fit px-5 py-3'>{obj}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="xl:text-[250px] text-[100px] font-bold  !text-start">
                         {displayText}
                     </p>
                 </div>
@@ -161,8 +173,7 @@ const Furniture = () => {
                     </div>
                 ))}
             </div>
-            <div id="next" className="min-h-screen"></div>
-        </div>
+        </>
     );
 };
 

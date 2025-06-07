@@ -1,3 +1,5 @@
+import Footer from "@/components/common/Footer";
+import FooterBootom from "@/components/common/FooterBootom";
 import NavBar from "@/components/common/NavBar";
 import Discover from "@/components/Discover";
 import Furniture from "@/components/Furniture";
@@ -15,8 +17,10 @@ export default function Home() {
       <NavBar />
       <Discover />
       <ZoomImageSection />
-      <ManyOptions />
+      {/* <ManyOptions /> */}
       <Furniture />
+      <Footer />
+      <FooterBootom/>
     </div>
 
   );

@@ -43,7 +43,7 @@ const NavBar = () => {
         return () => ctx.revert();
     }, [])
     return (
-        <div id='nav_parent' className='overflow-x-clip'>
+        <div id='nav_parent' className='overflow-x-clip relative z-[3]'>
             <div id='heroBg' className='h-screen'>
                 <Image width={1200} height={1000} className='w-full h-full object-cover' src="/assets/images/webp/minimal-hero-bg.webp" alt='her-img' />
             </div>
