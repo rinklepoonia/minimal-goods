@@ -31,8 +31,8 @@ const ZoomImageSection = () => {
             )
                 .fromTo("#imgZoom ", {
                     borderRadius: "100rem",
-                    width: "400px",
-                    height: "400px",
+                    width: "500px",
+                    height: "500px",
                 }, {
                     borderRadius: "0",
                     width: "100vw",
@@ -60,7 +60,7 @@ const ZoomImageSection = () => {
     }, [])
     return (
         <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[30] px-10 flex justify-center items-center overflow-hidden'>
-            <div id='imgZoom' className='mx-auto overflow-hidden w-full'>
+            <div id='imgZoom' className='mx-auto overflow-hidden w-full h-full flex items-center justify-center'>
                 <Image width={1920} height={1024} className='object-cover mx-auto' src="/assets/images/webp/room.webp" alt='her-img' />
             </div>
         </div>
