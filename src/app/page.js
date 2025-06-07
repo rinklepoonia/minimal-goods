@@ -17,7 +17,7 @@ export default function Home() {
       <NavBar />
       <Discover />
       <ZoomImageSection />
-      {/* <ManyOptions /> */}
+      <ManyOptions />
       <Furniture />
       <Footer />
       <FooterBootom/>

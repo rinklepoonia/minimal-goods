@@ -14,7 +14,7 @@ const Discover = () => {
         start: "top 10%",
         end: "bottom 25%",
         scrub: 1,
-        markers: true,
+        markers: false,
         animation: tl,
         toggleActions: "play none none none",
       })
