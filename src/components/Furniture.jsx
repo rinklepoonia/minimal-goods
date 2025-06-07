@@ -95,7 +95,7 @@ const Furniture = () => {
                         scrub: 5,
                         id: `${index + 1}th image`,
                         invalidateOnRefresh: true,
-                        markers: true,
+                        markers: false,
                     }
                 });
             });
