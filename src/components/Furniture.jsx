@@ -106,7 +106,10 @@ const Furniture = () => {
 
     return (
         <>
-            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
+            <div  style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
+                {/* <p className="xl:text-[250px] text-[100px] font-bold  !text-start absolute top-[10%] left-0">
+                    {displayText}
+                </p> */}
                 <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  px-10">
                     <p className="xl:text-[250px] text-[100px] font-bold  !text-start">
                         {displayText}
