@@ -10,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const Furniture = () => {
-    const [bgColor, setBgColor] = useState('#fff');
+    const [bgColor, setBgColor] = useState('#E8E2DA');
     const [textColor, setTextColor] = useState('#000');
-    const [displayText, setDisplayText] = useState('');
+    const [displayText, setDisplayText] = useState('furniture');
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // Pin the section
@@ -106,7 +106,7 @@ const Furniture = () => {
 
     return (
         <>
-            <div  style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
+            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
                 {/* <p className="xl:text-[250px] text-[100px] font-bold  !text-start absolute top-[10%] left-0">
                     {displayText}
                 </p> */}
