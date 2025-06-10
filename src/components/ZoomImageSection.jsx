@@ -13,7 +13,7 @@ const ZoomImageSection = () => {
             let tl = gsap.timeline()
             ScrollTrigger.create({
                 trigger: "#zoomImgEffect",
-                start: "top 8%",
+                start: "top 5%",
                 end: "bottom top",
                 scrub: 1,
                 markers: false,
