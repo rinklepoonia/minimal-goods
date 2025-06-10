@@ -42,6 +42,10 @@ const Furniture = () => {
                         setDisplayText("Decor");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#navLinks", { color: "#fff", }, "<")
+                        gsap.to("#logoPath", { fill: "#fff", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // ==whitedecor
                     else if (self.progress > 0.3666666 && self.progress < 0.444444) {
@@ -59,6 +63,10 @@ const Furniture = () => {
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                         gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#navLinks", { color: "#000", }, "<")
+                        gsap.to("#logoPath", { fill: "#000", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#000", }, "<")
                     }
                     // ===blackOffice
                     else if (self.progress > 0.6 && self.progress < 0.79999999) {
@@ -77,6 +85,11 @@ const Furniture = () => {
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
                         gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#navLinks", { color: "#fff", }, "<")
+                        gsap.to("#logoPath", { fill: "#fff", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // whiteTech
                     else if (self.progress >= 0.8999999) {
@@ -94,10 +107,14 @@ const Furniture = () => {
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
                         gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#navLinks", { color: "#000", }, "<")
+                        gsap.to("#logoPath", { fill: "#000", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#000", }, "<")
                     }
                 },
             });
-            
+
             // Parallax effect for images
             const images = document.querySelectorAll('.parallax-img');
             images.forEach((img, index) => {

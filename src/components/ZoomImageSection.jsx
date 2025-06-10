@@ -38,9 +38,13 @@ const ZoomImageSection = () => {
                 .to("#zoomImgEffect", {
                     backgroundColor: "#E8E2DA",
                 }, "<")
+                .to("body", {
+                    backgroundColor: "#E8E2DA",
+                }, "<")
                 .to("#stickyNav", {
                     backgroundColor: "#E8E2DA",
                 }, "<")
+
                 .to("#navLinks", {
                     color: "#000",
                 }, "<")
