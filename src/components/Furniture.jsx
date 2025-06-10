@@ -32,6 +32,10 @@ const Furniture = () => {
                         setDisplayText("Furniture");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#navLinks", { color: "#fff", }, "<")
+                        gsap.to("#logoPath", { fill: "#fff", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // ===blackdecor
                     else if (self.progress > 0.2 && self.progress < 0.3666666) {
@@ -44,44 +48,56 @@ const Furniture = () => {
                         setDisplayText("Decor");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#navLinks", { color: "#000", }, "<")
+                        gsap.to("#logoPath", { fill: "#000", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#000", }, "<")
                     }
                     // ===whiteOffice
                     else if (self.progress > 0.444444 && self.progress < 0.59999999) {
                         setDisplayText("Office");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
-
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
                     }
                     // ===blackOffice
                     else if (self.progress > 0.6 && self.progress < 0.79999999) {
                         setDisplayText("Office");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
+                        gsap.to("#navLinks", { color: "#fff", }, "<")
+                        gsap.to("#logoPath", { fill: "#fff", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // ======blackTech
                     else if (self.progress > 0.8 && self.progress < 0.8999999) {
                         setDisplayText("Tech");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
+                        gsap.to("#stickyNav", { backgroundColor: '#2E2A27' });
                     }
                     // whiteTech
                     else if (self.progress >= 0.8999999) {
                         setDisplayText("Tech");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
+                        gsap.to("#navLinks", { color: "#000", }, "<")
+                        gsap.to("#logoPath", { fill: "#000", }, "<")
+                        gsap.to("#borderBottom", { borderBottomColor: "#000", }, "<")
                     }
                     else {
                         setDisplayText("Furniture");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
+                        gsap.to("#stickyNav", { backgroundColor: '#E8E2DA' });
                     }
                 },
             });
-            // gsap.fromTo("#manyOption", {
-            //     y: 0
-            // }, {
-            //     y: -600
-            // })
+            
             // Parallax effect for images
             const images = document.querySelectorAll('.parallax-img');
             images.forEach((img, index) => {

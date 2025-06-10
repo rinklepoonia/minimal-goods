@@ -53,7 +53,7 @@ const NavBar = () => {
                         <ul className='flex items-center gap-3 '>
                             {NAV_DATA_LIST.map((obj, i) => (
                                 <li key={i}>
-                                    <Link href={obj.href} id='navLinks' className="text-white hover:text-blue-500 transition-colors duration-300 text-base font-bold">
+                                    <Link href={obj.href} id='navLinks' className="text-white hover:text-blue-500  duration-300 text-base font-bold">
                                         {obj.title}
                                     </Link>
                                 </li>
