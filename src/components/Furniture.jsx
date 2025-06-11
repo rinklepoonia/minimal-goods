@@ -25,6 +25,9 @@ const Furniture = () => {
                 pinSpacing: false,
                 pinSpacer: false,
                 markers: false,
+                duration: 2,
+                ease: "power2.inOut",
+                delay:"1",
                 onUpdate: (self) => {
                     console.log("Current Progress:", self.progress);
                     // ====blackFurniture

@@ -11,6 +11,7 @@ const NavBar = () => {
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             let tl = gsap.timeline()
+            let mm = gsap.matchMedia();
             ScrollTrigger.create({
                 trigger: "#nav_parent",
                 start: "top top",
@@ -21,10 +22,28 @@ const NavBar = () => {
                 toggleActions: "play none none none",
                 duration: 2,
             })
-            tl.from("#logoAnimate", {
-                y: -200,
-                scale: 8
-            })
+
+            mm.add("(min-width: 800px)", () => {
+                tl.from("#logoAnimate", {
+                    y: -200,
+                    scale: 8
+                })
+                mm.add("(max-width: 799px)", () => {
+                    tl.from("#logoAnimate", {
+                        y: -200,
+                        scale: 1
+                    })
+                });
+            });
+
+
+
+
+
+
+
+
+
 
             // sticky nav
             ScrollTrigger.create({
