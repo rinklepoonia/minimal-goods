@@ -58,7 +58,7 @@ const ZoomImageSection = () => {
         return () => ctx.revert();
     }, [])
     return (
-        <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[2] px-10 flex justify-center items-center overflow-hidden relative'>
+        <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[2] sm:px-10 px-4 flex justify-center items-center overflow-hidden relative'>
             <div id='imgZoom' className='mx-auto overflow-hidden w-full h-full flex items-center justify-center'>
                 <div id='imgZoom' className="rounded-full overflow-hidden bg-no-repeat  bg-center image-wrapper bg-[url('/assets/images/png/white-sofa.png')]"></div>
             </div>

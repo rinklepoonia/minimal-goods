@@ -38,22 +38,22 @@ const Discover = () => {
       <div className='container max-w-[1180px] mx-auto px-4 text-center'>
         <div className='relative overflow-hidden'>
           <div id='textOne' className=''>
-            <h2 className='text-[173px] leading-[80%] text-white'>Discover</h2>
+            <h2 className='xl:text-[173px] sm:text-[100px] text-[50px] leading-[80%] text-white'>Discover</h2>
           </div>
         </div>
         <div className='relative overflow-hidden'>
           <div id='textTwo' className=''>
-            <h2 className='text-[173px] leading-[80%] text-white'>the best in</h2>
+            <h2 className='xl:text-[173px] sm:text-[100px] text-[50px] leading-[80%] text-white'>the best in</h2>
           </div>
         </div>
         <div className='relative overflow-hidden'>
           <div id='textThree' className=''>
-            <h2 className='text-[173px] leading-[80%] text-white'>minimal</h2>
+            <h2 className='xl:text-[173px] sm:text-[100px] text-[50px] leading-[80%] text-white'>minimal</h2>
           </div>
         </div>
         <div className='relative overflow-hidden'>
           <div id='textFour' className=''>
-            <h2 className='text-[173px] leading-[100%] text-white'>design</h2>
+            <h2 className='xl:text-[173px] sm:text-[100px] text-[50px] leading-[100%] text-white'>design</h2>
           </div>
         </div>
       </div>
