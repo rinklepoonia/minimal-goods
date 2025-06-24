@@ -11,6 +11,7 @@ const ZoomImageSection = () => {
         const circleWidth = window.innerWidth;
         let ctx = gsap.context(() => {
             let tl = gsap.timeline()
+            let mm = gsap.matchMedia();
             ScrollTrigger.create({
                 trigger: "#zoomImgEffect",
                 start: "top 5%",
@@ -22,22 +23,40 @@ const ZoomImageSection = () => {
                 pinSpacing: true,
                 animation: tl,
             })
-            tl.fromTo("#imgZoom",
-                {
-                    width: `${circleHeight - 250}px`,
-                    height: `${circleHeight - 250}px`,
-                    borderRadius: "9999px",
-                },
-                {
-                    width: `${circleWidth - 18}px`,
-                    height: `${circleHeight - 0}px`,
-                    borderRadius: "0px",
-                    duration: 1,
-                }, "<"
-            )
-                .to("#zoomImgEffect", {
-                    backgroundColor: "#E8E2DA",
-                }, "<")
+            mm.add("(min-width: 768.99px)", () => {
+                tl.fromTo("#imgZoom",
+                    {
+                        width: `${circleHeight - 250}px`,
+                        height: `${circleHeight - 250}px`,
+                        borderRadius: "9999px",
+                    },
+                    {
+                        width: `${circleWidth - 40}px`,
+                        height: `${circleHeight - 0}px`,
+                        borderRadius: "0px",
+                        duration: 1,
+                    }, "<"
+                )
+            });
+            mm.add("(max-width: 767.99px)", () => {
+                tl.fromTo("#imgZoom",
+                    {
+                        width: `${circleHeight - 650}px`,
+                        height: `${circleHeight - 650}px`,
+                        borderRadius: "9999px",
+                    },
+                    {
+                        width: `${circleWidth - 40}px`,
+                        height: `${circleHeight - 0}px`,
+                        borderRadius: "0px",
+                        duration: 1,
+                    }, "<"
+                )
+            });
+
+            tl.to("#zoomImgEffect", {
+                backgroundColor: "#E8E2DA",
+            }, "<")
                 .to("body", {
                     backgroundColor: "#E8E2DA",
                 }, "<")
@@ -60,7 +79,7 @@ const ZoomImageSection = () => {
     return (
         <div id='zoomImgEffect' className='h-[100vh] bg-[#2E2A27] z-[2] sm:px-10 px-4 flex justify-center items-center overflow-hidden relative'>
             <div id='imgZoom' className='mx-auto overflow-hidden w-full h-full flex items-center justify-center'>
-                <div id='imgZoom' className="rounded-full overflow-hidden bg-no-repeat  bg-center image-wrapper bg-[url('/assets/images/png/white-sofa.png')]"></div>
+                <div id='imgZoom' className="rounded-full overflow-hidden bg-no-repeat  bg-center image-wrapper bg-zoom-img"></div>
             </div>
         </div>
     )

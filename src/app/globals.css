@@ -11,11 +11,19 @@ body {
 }
 
 @theme inline {
-  /* --background-hero: url("/assets/images/webp/minimal-hero-bg.webp") */
+  --background-sofa: url("/assets/images/png/white-sofa.png");
+  --background-sofa-mobile: url("/assets/images/webp/room.webp")
 }
 
-.bg-hero {
-  background-image: var(--background-hero);
+
+@media (min-width:768px) {
+  .bg-zoom-img {
+    background-image: var(--background-sofa);
+  }
+}
+
+.bg-zoom-img {
+  background-image: var(--background-sofa-mobile);
 }
 
 .bg-full {
