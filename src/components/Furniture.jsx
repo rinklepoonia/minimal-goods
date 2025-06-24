@@ -143,24 +143,21 @@ const Furniture = () => {
     return (
         <>
             <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
-                {/* <p className="xl:text-[250px] text-[100px] font-bold  !text-start absolute top-[10%] left-0">
-                    {displayText}
-                </p> */}
-                <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  px-10">
-                    <p className="xl:text-[250px] text-[100px] font-bold  !text-start">
+                <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  lg:px-10 px-4">
+                    <p className="xl:text-[250px] sm:text-[100px] text-[70px] font-bold  !text-start">
                         {displayText}
                     </p>
                 </div>
                 {FURNITURE_IMAGES_DATA_LIST.map((group, index) => (
                     <div
                         key={index}
-                        className={`flex flex-row justify-start relative z-2 px-10  `}
+                        className={`flex flex-row lg:justify-start justify-between relative z-2 sm:px-10 px-4  max-lg:mt-10`}
                     >
                         {group.map((item, i) => (
                             <div key={i} className={item.className}>
                                 <div id="triggerImg" className={`${item.imageHeight} `}>
                                     <Image
-                                        className="parallax-img object-cover w-full h-full"
+                                        className="parallax-img object-cover w-full lg:h-full max-lg:max-w-full"
                                         width={item.width}
                                         height={item.height}
                                         src={item.src}
