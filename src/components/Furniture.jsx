@@ -3,7 +3,7 @@ import { FURNITURE_IMAGES_DATA_LIST, OPTIONS_DATA_LIST } from "@/utils/helper";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState, useRef, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +11,7 @@ const Furniture = () => {
     const [bgColor, setBgColor] = useState('#E8E2DA');
     const [textColor, setTextColor] = useState('#000');
     const [displayText, setDisplayText] = useState('furniture');
+    const textRef = useRef(null);
 
     // Function to get responsive progress thresholds
     const getResponsiveProgress = () => {
@@ -179,11 +180,25 @@ const Furniture = () => {
         return () => ctx.revert();
     }, []);
 
+    useEffect(() => {
+        if (textRef.current) {
+            gsap.fromTo(
+                textRef.current,
+                { opacity: 0, color: '#ff' },
+                { opacity: 1, color: textColor, duration: 0.7 }
+            );
+        }
+    }, [displayText, textColor]);
+
     return (
         <>
             <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
                 <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  lg:px-10 px-4">
-                    <p className="xl:text-[250px] sm:text-[100px] text-[70px] font-bold  !text-start">
+                    <p
+                        ref={textRef}
+                        className="xl:text-[250px] sm:text-[100px] text-[70px] font-bold  !text-start"
+                        style={{ willChange: 'opacity, transform, color' }}
+                    >
                         {displayText}
                     </p>
                 </div>
