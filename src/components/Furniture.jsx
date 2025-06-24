@@ -7,16 +7,42 @@ import React, { useLayoutEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-
 const Furniture = () => {
     const [bgColor, setBgColor] = useState('#E8E2DA');
     const [textColor, setTextColor] = useState('#000');
     const [displayText, setDisplayText] = useState('furniture');
+
+    // Function to get responsive progress thresholds
+    const getResponsiveProgress = () => {
+        const isMobile = window.innerWidth < 540;
+
+        if (isMobile) {
+            return {
+                blackFurniture: { min: 0.15, max: 0.28 },
+                blackDecor: { min: 0.28, max: 0.35 },
+                whiteDecor: { min: 0.35, max: 0.52 },
+                whiteOffice: { min: 0.52, max: 0.53 },
+                blackOffice: { min: 0.53, max: 0.72 },
+                blackTech: { min: 0.72, max: 0.82 },
+                whiteTech: { min: 0.82, max: 1.0 }
+            };
+        } else {
+            return {
+                blackFurniture: { min: 0.18, max: 0.1999999 },
+                blackDecor: { min: 0.2, max: 0.3666666 },
+                whiteDecor: { min: 0.3666666, max: 0.444444 },
+                whiteOffice: { min: 0.444444, max: 0.59999999 },
+                blackOffice: { min: 0.6, max: 0.79999999 },
+                blackTech: { min: 0.8, max: 0.8999999 },
+                whiteTech: { min: 0.8999999, max: 1.0 }
+            };
+        }
+    };
+
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // Pin the section
-            ScrollTrigger.create({
+            const scrollTrigger = ScrollTrigger.create({
                 trigger: "#furniture",
                 start: "top top",
                 endTrigger: "#footer",
@@ -27,11 +53,13 @@ const Furniture = () => {
                 markers: false,
                 duration: 2,
                 ease: "power2.inOut",
-                delay:"1",
+                delay: "1",
                 onUpdate: (self) => {
                     console.log("Current Progress:", self.progress);
+                    const progressThresholds = getResponsiveProgress();
+
                     // ====blackFurniture
-                    if (self.progress > 0.18 && self.progress < 0.1999999) {
+                    if (self.progress > progressThresholds.blackFurniture.min && self.progress < progressThresholds.blackFurniture.max) {
                         setDisplayText("Furniture");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
@@ -41,7 +69,7 @@ const Furniture = () => {
                         gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // ===blackdecor
-                    else if (self.progress > 0.2 && self.progress < 0.3666666) {
+                    else if (self.progress > progressThresholds.blackDecor.min && self.progress < progressThresholds.blackDecor.max) {
                         setDisplayText("Decor");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
@@ -51,7 +79,7 @@ const Furniture = () => {
                         gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // ==whitedecor
-                    else if (self.progress > 0.3666666 && self.progress < 0.444444) {
+                    else if (self.progress > progressThresholds.whiteDecor.min && self.progress < progressThresholds.whiteDecor.max) {
                         setDisplayText("Decor");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
@@ -61,7 +89,7 @@ const Furniture = () => {
                         gsap.to("#borderBottom", { borderBottomColor: "#000", }, "<")
                     }
                     // ===whiteOffice
-                    else if (self.progress > 0.444444 && self.progress < 0.59999999) {
+                    else if (self.progress > progressThresholds.whiteOffice.min && self.progress < progressThresholds.whiteOffice.max) {
                         setDisplayText("Office");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
@@ -72,7 +100,7 @@ const Furniture = () => {
                         gsap.to("#borderBottom", { borderBottomColor: "#000", }, "<")
                     }
                     // ===blackOffice
-                    else if (self.progress > 0.6 && self.progress < 0.79999999) {
+                    else if (self.progress > progressThresholds.blackOffice.min && self.progress < progressThresholds.blackOffice.max) {
                         setDisplayText("Office");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
@@ -83,7 +111,7 @@ const Furniture = () => {
                         gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // ======blackTech
-                    else if (self.progress > 0.8 && self.progress < 0.8999999) {
+                    else if (self.progress > progressThresholds.blackTech.min && self.progress < progressThresholds.blackTech.max) {
                         setDisplayText("Tech");
                         setBgColor('#2E2A27');
                         setTextColor('#fff');
@@ -95,7 +123,7 @@ const Furniture = () => {
                         gsap.to("#borderBottom", { borderBottomColor: "#fff", }, "<")
                     }
                     // whiteTech
-                    else if (self.progress >= 0.8999999) {
+                    else if (self.progress >= progressThresholds.whiteTech.min) {
                         setDisplayText("Tech");
                         setBgColor('#E8E2DA');
                         setTextColor('#000');
@@ -118,6 +146,13 @@ const Furniture = () => {
                 },
             });
 
+            // Handle resize events to update ScrollTrigger
+            const handleResize = () => {
+                scrollTrigger.refresh();
+            };
+
+            window.addEventListener('resize', handleResize);
+
             // Parallax effect for images
             const images = document.querySelectorAll('.parallax-img');
             images.forEach((img, index) => {
@@ -135,6 +170,10 @@ const Furniture = () => {
                     }
                 });
             });
+
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
         });
 
         return () => ctx.revert();
