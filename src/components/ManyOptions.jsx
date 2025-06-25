@@ -8,7 +8,7 @@ const ManyOptions = () => {
         <div className='flex items-center sm:gap-2.5 gap-1 flex-wrap justify-center'>
           {OPTIONS_DATA_LIST.map((obj, i) => (
             <div key={i}>
-              <p className='text-[#2e2a27] sm:text-6xl text-[14px] leading-[70%] font-normal border border-solid border-[#2E2A27]/35 rounded-full w-fit sm:px-5 px-2 sm:py-3 py-2'>{obj}</p>
+              <p className='text-[#2e2a27] lg:text-6xl sm:text-3xl text-[14px] leading-[70%] font-normal border border-solid border-[#2E2A27]/35 rounded-full w-fit sm:px-5 px-2 sm:py-3 py-2'>{obj}</p>
             </div>
           ))}
         </div>

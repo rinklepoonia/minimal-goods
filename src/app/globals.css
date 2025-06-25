@@ -16,13 +16,13 @@ body {
 }
 
 
-@media (min-width:768px) {
+@media (min-width:1026px) {
   .bg-zoom-img {
     background-image: var(--background-sofa);
   }
 }
 
-@media (max-width:768px) {
+@media (max-width:1025px) {
   .bg-zoom-img {
     background-image: var(--background-sofa-mobile);
   }

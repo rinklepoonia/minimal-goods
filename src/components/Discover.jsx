@@ -11,7 +11,7 @@ const Discover = () => {
       let tl = gsap.timeline()
       ScrollTrigger.create({
         trigger: "#discoverParent",
-        start: "top 10%",
+        start: "top top",
         end: "bottom 25%",
         scrub: 1,
         markers: false,
@@ -34,7 +34,7 @@ const Discover = () => {
     return () => ctx.revert();
   }, [])
   return (
-    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center pt-20 mb-[-1px] relative z-[2]'>
+    <div id='discoverParent' className=' bg-[#2E2A27] flex flex-col justify-center items-center sm:pt-20 pt-5 mb-[-1px] relative z-[2]'>
       <div className='container max-w-[1180px] mx-auto px-4 text-center'>
         <div className='relative overflow-hidden'>
           <div id='textOne' className=''>

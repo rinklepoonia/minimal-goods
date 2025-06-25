@@ -185,18 +185,18 @@ const Furniture = () => {
             gsap.fromTo(
                 textRef.current,
                 { opacity: 0, color: '#ff' },
-                { opacity: 1, color: textColor, duration: 0.7 }
+                { opacity: 1, color: textColor, duration: 0.3 }
             );
         }
     }, [displayText, textColor]);
 
     return (
         <>
-            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2]">
+            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2] xl:pb-0 pb-10">
                 <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  lg:px-10 px-4">
                     <p
                         ref={textRef}
-                        className="xl:text-[250px] sm:text-[100px] text-[70px] font-bold  !text-start"
+                        className={`xl:text-[250px] sm:text-[100px] text-[70px] font-bold !leading-[150%] !text-start ${displayText === "Tech" && "xl:pb-0 pb-20"} `}
                         style={{ willChange: 'opacity, transform, color' }}
                     >
                         {displayText}
@@ -205,7 +205,7 @@ const Furniture = () => {
                 {FURNITURE_IMAGES_DATA_LIST.map((group, index) => (
                     <div
                         key={index}
-                        className={`flex flex-row lg:justify-start justify-between relative z-2 sm:px-10 px-4  max-lg:mt-10`}
+                        className={`flex flex-row  relative z-2 sm:px-10 px-4  max-lg:mt-10 ${index === 2 || index === 5 ? "justify-start" : "xl:justify-start justify-between"}`}
                     >
                         {group.map((item, i) => (
                             <div key={i} className={item.className}>
