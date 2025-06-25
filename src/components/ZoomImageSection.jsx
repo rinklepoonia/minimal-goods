@@ -41,8 +41,8 @@ const ZoomImageSection = () => {
             mm.add("(max-width: 767.99px)", () => {
                 tl.fromTo("#imgZoom",
                     {
-                        width: `${circleHeight - 550}px`,
-                        height: `${circleHeight - 550}px`,
+                        width: `${circleHeight - 710}px`,
+                        height: `${circleHeight - 710}px`,
                         borderRadius: "9999px",
                     },
                     {

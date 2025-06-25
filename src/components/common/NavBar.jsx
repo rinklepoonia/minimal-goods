@@ -46,8 +46,8 @@ const NavBar = () => {
 
             mm.add("(max-width: 560px)", () => {
                 tl.from("#logoAnimate", {
-                    y: -350,
-                    scale: 2
+                    y: -30,
+                    scale:3.4
                 });
             });
 
@@ -74,11 +74,11 @@ const NavBar = () => {
             </div>
             <div id='stickyNav' className='z-[500] bg-[#2E2A27]'>
                 <div className=' mx-auto sm:px-10 px-4'>
-                    <div id='borderBottom' className='flex items-center justify-between h-[85px] border-b border-solid border-[#fff]'>
+                    <div id='borderBottom' className='flex items-center justify-between sm:h-[85px] h-5 border-b border-solid border-[#fff]'>
                         <ul className='flex items-center sm:gap-3 gap-1'>
                             {NAV_DATA_LIST.map((obj, i) => (
-                                <li key={i}>
-                                    <Link href={obj.href} id='navLinks' className="text-white hover:text-blue-500  duration-300 md:text-base text-[10px] font-bold">
+                                <li key={i} className='leading-normal flex'>
+                                    <Link href={obj.href} id='navLinks' className="text-white hover:text-blue-500  duration-300 md:text-base text-[6px] font-bold scale-">
                                         {obj.title}
                                     </Link>
                                 </li>
