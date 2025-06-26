@@ -4,13 +4,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useLayoutEffect, useState, useRef, useEffect } from "react";
+import UseLenis from "./common/UseLenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Furniture = () => {
+    UseLenis()
     const [bgColor, setBgColor] = useState('#E8E2DA');
     const [textColor, setTextColor] = useState('#000');
-    const [displayText, setDisplayText] = useState('furniture');
+    const [displayText, setDisplayText] = useState('Furniture');
     const textRef = useRef(null);
 
     // Function to get responsive progress thresholds
@@ -192,11 +194,11 @@ const Furniture = () => {
 
     return (
         <>
-            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-all ease-linear duration-300 relative z-[2] xl:pb-0 pb-10">
+            <div style={{ background: bgColor, color: textColor, }} className=" bg-[#E8E2DA] flex flex-col justify-end transition-colors ease-linear duration-300 relative z-[2] xl:pb-0 pb-10">
                 <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  lg:px-10 px-4">
                     <p
                         ref={textRef}
-                        className={`xl:text-[250px] sm:text-[100px] text-[70px] font-bold !leading-[150%] !text-start block ${displayText === "Tech" && "lg:pb-0 pb-5"} `}
+                        className={`xl:text-[250px] sm:text-[100px] text-[70px] font-bold !leading-[150%] !text-start block transition-all ease-linear duration-300 ${displayText === "Tech" && "lg:pb-0 pb-5"} `}
                         style={{ willChange: 'opacity, transform, color' }}
                     >
                         {displayText}
