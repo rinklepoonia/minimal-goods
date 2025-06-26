@@ -45,7 +45,7 @@ const NavBar = () => {
 
             mm.add("(min-width: 640px) and (max-width: 768px)", () => {
                 tl.from("#logoAnimate", {
-                    y: -40,
+                    y: -100,
                     scale: 4
                 });
             });

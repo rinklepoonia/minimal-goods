@@ -196,7 +196,7 @@ const Furniture = () => {
                 <div style={{ background: bgColor }} id="furniture" className="h-screen w-screen flex  justify-start items-end  lg:px-10 px-4">
                     <p
                         ref={textRef}
-                        className={`xl:text-[250px] sm:text-[100px] text-[70px] font-bold !leading-[150%] !text-start block ${displayText === "Tech" && "pb-0"} `}
+                        className={`xl:text-[250px] sm:text-[100px] text-[70px] font-bold !leading-[150%] !text-start block ${displayText === "Tech" && "lg:pb-0 pb-5"} `}
                         style={{ willChange: 'opacity, transform, color' }}
                     >
                         {displayText}
