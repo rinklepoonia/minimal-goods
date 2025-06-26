@@ -27,7 +27,7 @@ const ZoomImageSection = () => {
                 tl.fromTo("#imgZoom",
                     {
                         width: `${circleHeight - 250}px`,
-                        height: `${circleHeight - 250}px`,
+                        height: `${circleHeight -250}px`,
                         borderRadius: "9999px",
                     },
                     {

@@ -23,9 +23,15 @@ const NavBar = () => {
                 duration: 2,
             })
 
+            // mm.add("(min-width: 1537px)", () => {
+            //     tl.from("#logoAnimate", {
+            //         y: -220,
+            //         scale: 9
+            //     });
+            // });
             mm.add("(min-width: 1300px)", () => {
                 tl.from("#logoAnimate", {
-                    y: -200,
+                    y: -170,
                     scale: 8
                 });
             });
@@ -39,7 +45,7 @@ const NavBar = () => {
 
             mm.add("(min-width: 640px) and (max-width: 768px)", () => {
                 tl.from("#logoAnimate", {
-                    y: -100,
+                    y: -40,
                     scale: 4
                 });
             });

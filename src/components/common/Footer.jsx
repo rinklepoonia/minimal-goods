@@ -7,9 +7,9 @@ const Footer = () => {
 
     const currentYear = new Date().getFullYear();
     return (
-        <div id='footer' className="bg-[#2E2A27]  border-t border-solid border-gradient z-[2] relative sm:rounded-b-[60px] rounded-b-[20px] mt-20">
+        <div id='footer' className="bg-[#2E2A27]  border-t border-solid border-gradient z-[2] relative sm:rounded-b-[60px] rounded-b-[20px]">
 
-            <div className='max-w-[1180px] container sm:px-5 px-4 mx-auto lg:pt-20 md:pt-14 pt-10 lg:pb-16 md:pb-12 pb-8'>
+            <div className='container sm:px-5 px-4 mx-auto lg:pt-20 md:pt-14 pt-10 lg:pb-16 md:pb-12 pb-8'>
                 <div className="flex lg:flex-row flex-col justify-between gap-7">
                     <div className='lg:w-[35%]'>
                         <Link href="/">
@@ -35,7 +35,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className="md:py-7 py-5 border-t border-solid border-gradient text-center text-white text-base">
+            <p className="md:py-7 py-5 border-t border-solid border-gradient text-center text-white text-base px-4">
                 © {currentYear} StreamBliss. All rights reserved.
             </p>
 

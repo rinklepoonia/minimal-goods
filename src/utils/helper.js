@@ -58,13 +58,13 @@ export const FURNITURE_IMAGES_DATA_LIST = [
     [
         { src: "/assets/images/webp/white-window.webp", width: 334, height: 438, className: "xl:w-[24%] w-[21%] xl:mr-[6.25%] mr-5 mt-0 xl:h-[438px]", imageHeight: "xl:h-[438px]", alt: "white-window" },
         { src: "/assets/images/webp/study-table.webp", width: 248, height: 325, className: "w-[19%] xl:mr-[6.25%] mr-5 mt-[20%] xl:h-[325px]", imageHeight: "xl:h-[325px] ", alt: "study-table" },
-        { src: "/assets/images/webp/white-cahir.webp", width: 161, height: 212, className: "w-[12%] mt-[4%] xl:h-[212px]", imageHeight: "xl:h-[212px] h-[150px]", alt: "white-chair" },
+        { src: "/assets/images/webp/white-cahir.webp", width: 161, height: 212, className: "w-[12%] mt-[4%] mr-[6%] xl:h-[212px]", imageHeight: "xl:h-[212px] h-[150px]", alt: "white-chair" },
         { src: "/assets/images/webp/single-chair.webp", width: 420, height: 551, className: "w-[26%] mt-[24%] xl:max-h-[551px]", imageHeight: "xl:max-h-[551px]", alt: "single-chair" },
     ],
     [
         { src: "/assets/images/webp/white-masrum.webp", width: 334, height: 438, className: "w-[24%] mr-[6.25%] mt-0", imageHeight: "xl:-[438px]", alt: "white-masrum" },
         { src: "/assets/images/webp/white-lalten.webp", width: 248, height: 325, className: "w-[19%] mr-[6.25%] mt-[20%]", imageHeight: "xl:h-[325px]", alt: "white-lalten" },
-        { src: "/assets/images/webp/night-view.webp", width: 161, height: 212, className: "w-[12%] mt-[4%]", imageHeight: "xl:h-[212px]", alt: "night-view" },
+        { src: "/assets/images/webp/night-view.webp", width: 161, height: 212, className: "w-[12%] mt-[4%] mr-[6%]", imageHeight: "xl:h-[212px]", alt: "night-view" },
         { src: "/assets/images/webp/white-big-bulb.webp", width: 420, height: 551, className: "w-[26%] mt-[24%]", imageHeight: "xl:h-[551px]", alt: "white-big-bulb" },
     ],
     [
@@ -74,13 +74,13 @@ export const FURNITURE_IMAGES_DATA_LIST = [
     [
         { src: "/assets/images/webp/office-light.webp", width: 334, height: 438, className: "w-[24%] mr-[6.25%] mt-0", imageHeight: "xl:h-[438px]", alt: "office-light" },
         { src: "/assets/images/webp/two-chairs.webp", width: 248, height: 325, className: "w-[19%] mr-[6.25%] mt-[20%]", imageHeight: "xl:h-[325px]", alt: "two-chair" },
-        { src: "/assets/images/webp/gold-biskuts.webp", width: 161, height: 212, className: "w-[12%] mt-[4%]", imageHeight: "xl:h-[212px]", alt: "gold-biskuts" },
+        { src: "/assets/images/webp/gold-biskuts.webp", width: 161, height: 212, className: "w-[12%] mt-[4%] mr-[6%]", imageHeight: "xl:h-[212px]", alt: "gold-biskuts" },
         { src: "/assets/images/webp/chair-table-laptop.webp", width: 420, height: 551, className: "w-[26%] mt-[24%]", imageHeight: "xl:h-[551px]", alt: "chair-table-laptop" },
     ],
     [
         { src: "/assets/images/webp/less-more.webp", width: 334, height: 438, className: "w-[24%] mr-[6.25%] mt-0", imageHeight: "xl:h-[438px]", alt: "less-more" },
         { src: "/assets/images/webp/tech-5.webp", width: 248, height: 325, className: "w-[19%] mr-[6.25%] mt-[20%]", imageHeight: "xl:h-[325px]", alt: "tech-5" },
-        { src: "/assets/images/webp/camera.webp", width: 161, height: 212, className: "w-[12%] mt-[4%]", imageHeight: "xl:h-[212px]", alt: "camera" },
+        { src: "/assets/images/webp/camera.webp", width: 161, height: 212, className: "w-[12%] mt-[4%] mr-[6%]", imageHeight: "xl:h-[212px]", alt: "camera" },
         { src: "/assets/images/webp/digital-watch.webp", width: 420, height: 551, className: "w-[26%] mt-[24%]", imageHeight: "xl:h-[551px]", alt: "digital-watch" },
     ],
     [
