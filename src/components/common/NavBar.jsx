@@ -4,10 +4,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link'
-import React, { useLayoutEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 gsap.registerPlugin(ScrollTrigger);
 
 const NavBar = () => {
+
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             let tl = gsap.timeline()
@@ -23,12 +24,6 @@ const NavBar = () => {
                 duration: 2,
             })
 
-            // mm.add("(min-width: 1537px)", () => {
-            //     tl.from("#logoAnimate", {
-            //         y: -220,
-            //         scale: 9
-            //     });
-            // });
             mm.add("(min-width: 1300px)", () => {
                 tl.from("#logoAnimate", {
                     y: -170,
@@ -62,7 +57,6 @@ const NavBar = () => {
                 trigger: "#heroBg",
                 start: "bottom top",
                 endTrigger: "body",
-                // end: "max",
                 pin: "#stickyNav",
                 pinSpacing: false,
                 markers: false,

@@ -2,7 +2,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
-import React, { useLayoutEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 gsap.registerPlugin(ScrollTrigger);
 
 const ZoomImageSection = () => {
@@ -27,7 +27,7 @@ const ZoomImageSection = () => {
                 tl.fromTo("#imgZoom",
                     {
                         width: `${circleHeight - 300}px`,
-                        height: `${circleHeight -300}px`,
+                        height: `${circleHeight - 300}px`,
                         borderRadius: "9999px",
                     },
                     {
