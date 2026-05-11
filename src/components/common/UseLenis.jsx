@@ -1,4 +1,3 @@
-// hooks/useLenis.js
 "use client"
 import { useEffect } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -8,7 +7,7 @@ const UseLenis = () => {
     useEffect(() => {
         const lenis = new Lenis({
             smooth: true,
-            lerp: 0.08,
+            lerp: 0.05,
             direction: "vertical",
         })
 

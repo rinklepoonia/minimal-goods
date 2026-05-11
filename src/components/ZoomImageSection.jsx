@@ -1,8 +1,7 @@
 "use client"
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Image from 'next/image'
-import React, { useEffect, useLayoutEffect } from 'react'
+import React, {useLayoutEffect } from 'react'
 gsap.registerPlugin(ScrollTrigger);
 
 const ZoomImageSection = () => {

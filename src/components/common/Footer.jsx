@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react'
 import Link from 'next/link';
 import { FOOTER_DATA_LIST } from '@/utils/helper';
@@ -26,7 +25,7 @@ const Footer = () => {
                                 <ul className="sm:space-y-2 space-y-1">
                                     {obj.links.map((object, index) => (
                                         <li key={index} className='leading-[160%]'>
-                                            <Link href={object.url} className="text-white/70 sm:text-base text-sm font-normal leading-[160%] hover:text-white ease-linear duration-300 relative">{object.label}</Link>
+                                            <Link href="#" className="text-white/70 sm:text-base text-sm font-normal leading-[160%] hover:text-white ease-linear duration-300 relative">{object.label}</Link>
                                         </li>
                                     ))}
                                 </ul>

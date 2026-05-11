@@ -11,7 +11,7 @@ body {
 }
 
 @theme inline {
-  --background-sofa: url("/assets/images/png/white-sofa.png");
+  --background-sofa: url("/assets/images/webp/white-sofa.webp");
   --background-sofa-mobile: url("/assets/images/webp/room.webp")
 }
 

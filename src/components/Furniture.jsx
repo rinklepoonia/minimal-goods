@@ -1,5 +1,5 @@
 "use client";
-import { FURNITURE_IMAGES_DATA_LIST, OPTIONS_DATA_LIST } from "@/utils/helper";
+import { FURNITURE_IMAGES_DATA_LIST} from "@/utils/helper";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -15,7 +15,7 @@ const Furniture = () => {
     const [displayText, setDisplayText] = useState('Furniture');
     const textRef = useRef(null);
 
-    // Function to get responsive progress thresholds
+    // responsive
     const getResponsiveProgress = () => {
         const isMobile = window.innerWidth < 540;
 
@@ -44,7 +44,6 @@ const Furniture = () => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // Pin the section
             const scrollTrigger = ScrollTrigger.create({
                 trigger: "#furniture",
                 start: "top top",
@@ -149,14 +148,13 @@ const Furniture = () => {
                 },
             });
 
-            // Handle resize events to update ScrollTrigger
             const handleResize = () => {
                 scrollTrigger.refresh();
             };
 
             window.addEventListener('resize', handleResize);
 
-            // Parallax effect for images
+            // for images
             const images = document.querySelectorAll('.parallax-img');
             images.forEach((img, index) => {
                 gsap.to(img, {
