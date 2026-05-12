@@ -50,7 +50,7 @@ export default function AnimatedBackground() {
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
-        const particleCount = 80
+        const particleCount = 800
         const particlesArray = []
 
         class Particle {
